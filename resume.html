@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashwitha Gogikar - Resume</title>
+<style>
+@page {
+  size: A4;
+  margin: 15mm;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  background: #e8e8e8;
+  color: #1a1a1a;
+  font-size: 9.5pt;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 20px auto;
+  background: #ffffff;
+  padding: 14mm 16mm 12mm 16mm;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.08);
+  position: relative;
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+  .page {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    width: 100%;
+    min-height: auto;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .page {
+    width: 100%;
+    min-height: auto;
+    padding: 6mm 5mm;
+    margin: 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
+}
+
+/* ============ HEADER ============ */
+.header {
+  text-align: center;
+  padding-bottom: 9px;
+  border-bottom: 1.5px solid #1a1a1a;
+  margin-bottom: 10px;
+}
+
+.name {
+  font-size: 20pt;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #111;
+  margin-bottom: 3px;
+}
+
+.subtitle {
+  font-size: 9pt;
+  font-weight: 400;
+  color: #444;
+  letter-spacing: 0.8px;
+  margin-bottom: 7px;
+}
+
+.contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 16px;
+  font-size: 8pt;
+  color: #333;
+}
+
+.contact-row a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.contact-row a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.contact-label {
+  font-weight: 600;
+  color: #111;
+}
+
+.contact-sep {
+  color: #bbb;
+  user-select: none;
+}
+
+/* ============ SECTIONS ============ */
+.section {
+  margin-bottom: 9px;
+}
+
+.section-title {
+  font-size: 9.5pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  color: #111;
+  padding-bottom: 4px;
+  border-bottom: 0.8px solid #ccc;
+  margin-bottom: 6px;
+}
+
+.section-content {
+  font-size: 8.8pt;
+  color: #222;
+}
+
+/* ============ SUMMARY ============ */
+.summary-text {
+  text-align: justify;
+  hyphens: auto;
+  font-size: 8.8pt;
+  line-height: 1.5;
+  color: #2a2a2a;
+}
+
+/* ============ EXPERIENCE ============ */
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1px;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+
+.exp-company {
+  font-size: 9.5pt;
+  font-weight: 700;
+  color: #111;
+}
+
+.exp-date {
+  font-size: 8pt;
+  color: #666;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.exp-role {
+  font-size: 8.8pt;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+  font-style: italic;
+}
+
+.exp-list {
+  list-style: none;
+  padding: 0;
+  columns: 2;
+  column-gap: 18px;
+}
+
+.exp-list li {
+  font-size: 8.3pt;
+  color: #2a2a2a;
+  padding-left: 10px;
+  position: relative;
+  margin-bottom: 1.5px;
+  break-inside: avoid;
+  line-height: 1.4;
+}
+
+.exp-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #555;
+  font-size: 7pt;
+}
+
+/* ============ SKILLS ============ */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  column-gap: 24px;
+}
+
+.skill-item {
+  font-size: 8.3pt;
+  color: #2a2a2a;
+  padding: 1.5px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.skill-item::before {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #999;
+  flex-shrink: 0;
+}
+
+/* ============ PROJECTS ============ */
+.project-entry {
+  margin-bottom: 5px;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1px;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+
+.project-name {
+  font-size: 8.8pt;
+  font-weight: 600;
+  color: #111;
+}
+
+.project-tech {
+  font-size: 7.5pt;
+  color: #888;
+  font-style: italic;
+}
+
+.project-desc {
+  font-size: 8.2pt;
+  color: #333;
+  line-height: 1.4;
+  padding-left: 8px;
+  border-left: 1.5px solid #ddd;
+  margin-left: 2px;
+}
+
+.project-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1px;
+}
+
+.project-list li {
+  font-size: 8.2pt;
+  color: #333;
+  padding-left: 12px;
+  position: relative;
+  margin-bottom: 0.5px;
+  line-height: 1.35;
+}
+
+.project-list li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: #888;
+}
+
+/* ============ CERTIFICATIONS ============ */
+.cert-item {
+  font-size: 8.5pt;
+  color: #222;
+  padding: 1.5px 0;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.cert-item::before {
+  content: "✓";
+  font-size: 8pt;
+  color: #555;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ============ EDUCATION ============ */
+.edu-degree {
+  font-size: 8.8pt;
+  font-weight: 600;
+  color: #111;
+}
+
+.edu-school {
+  font-size: 8.3pt;
+  color: #555;
+  font-style: italic;
+}
+
+/* ============ COMPETENCIES ============ */
+.comp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.comp-tag {
+  font-size: 7.5pt;
+  color: #333;
+  background: #f4f4f4;
+  border: 0.5px solid #d0d0d0;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-weight: 500;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.comp-tag:hover {
+  background: #e8e8e8;
+  border-color: #aaa;
+  color: #111;
+}
+
+@media print {
+  .comp-tag {
+    background: #f4f4f4 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* ============ FOOTER ============ */
+.footer {
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 0.8px solid #ccc;
+  text-align: center;
+  font-size: 7.5pt;
+  color: #999;
+  letter-spacing: 0.5px;
+  font-style: italic;
+}
+
+/* ============ TWO COL LAYOUT ============ */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 20px;
+}
+
+/* ============ PRINT BUTTON ============ */
+.print-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  font-size: 9pt;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s;
+  z-index: 1000;
+}
+
+.print-btn:hover {
+  background: #333;
+}
+
+@media print {
+  .print-btn {
+    display: none !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<button class="print-btn no-print" onclick="window.print()">↓ Download PDF</button>
+
+<div class="page">
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="name">Ashwitha Gogikar</div>
+    <div class="subtitle">Release Engineer&nbsp; |&nbsp; Data Analyst&nbsp; |&nbsp; Machine Learning Enthusiast</div>
+    <div class="contact-row">
+      <span class="contact-item"><span class="contact-label">Email:</span> <a href="mailto:gshwitha2000@gmail.com">gshwitha2000@gmail.com</a></span>
+      <span class="contact-sep">|</span>
+      <span class="contact-item"><span class="contact-label">Portfolio:</span> <a href="https://portfolio-git-main-ashwitha.vercel.app/" target="_blank">portfolio-git-main-ashwitha.vercel.app</a></span>
+      <span class="contact-sep">|</span>
+      <span class="contact-item"><span class="contact-label">GitHub:</span> <a href="https://github.com/gshwitha2000-wq" target="_blank">github.com/gshwitha2000-wq</a></span>
+      <span class="contact-sep">|</span>
+      <span class="contact-item"><span class="contact-label">LinkedIn:</span> <a href="https://www.linkedin.com/in/ashwitha-gogikar" target="_blank">linkedin.com/in/ashwitha-gogikar</a></span>
+    </div>
+  </header>
+
+  <!-- ===== SUMMARY ===== -->
+  <section class="section">
+    <div class="section-title">Professional Summary</div>
+    <div class="section-content">
+      <p class="summary-text">Results-driven Release Engineer with 4.5+ years of experience managing enterprise-scale production deployments, CI/CD pipelines, and Azure cloud environments at NTT DATA. Proficient in Jenkins, Git, Dynamics 365, Oracle EBS, and MuleSoft, with hands-on expertise in automating release processes using Python to reduce deployment effort and minimize manual errors. Skilled in Power BI and SQL for data analytics, with a strong foundation in Machine Learning and statistical modeling. Adept at collaborating across Development, QA, and Infrastructure teams to ensure reliable, timely software deliveries aligned with Change Management and ITIL standards.</p>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section class="section">
+    <div class="section-title">Professional Experience</div>
+    <div class="section-content">
+      <div class="exp-header">
+        <span class="exp-company">NTT DATA</span>
+        <span class="exp-date">September 2021 – Present</span>
+      </div>
+      <div class="exp-role">Information Technology Senior Associate — Release Engineer</div>
+      <ul class="exp-list">
+        <li>Managed production deployments across enterprise applications</li>
+        <li>Coordinated end-to-end Release Management activities</li>
+        <li>Worked on Dynamics 365 and Azure Lifecycle Services (LCS)</li>
+        <li>Administered Oracle EBS and MuleSoft integrations</li>
+        <li>Configured and executed Jenkins CI/CD pipelines</li>
+        <li>Managed source control with Git and CVS</li>
+        <li>Developed Python automation scripts for deployments</li>
+        <li>Performed deployment validations and environment refresh</li>
+        <li>Provided production support and incident management</li>
+        <li>Managed tickets in ServiceNow and Jira</li>
+        <li>Drove Change Management processes end to end</li>
+        <li>Collaborated with Development, QA and Infrastructure teams</li>
+        <li>Reduced deployment effort through strategic automation</li>
+        <li>Ensured compliance with ITIL and release governance standards</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="two-col">
+
+    <!-- ===== LEFT COLUMN ===== -->
+    <div>
+
+      <!-- TECHNICAL SKILLS -->
+      <section class="section">
+        <div class="section-title">Technical Skills</div>
+        <div class="section-content">
+          <div class="skills-grid">
+            <div class="skill-item">Release Engineering</div>
+            <div class="skill-item">Azure Cloud</div>
+            <div class="skill-item">CI/CD Pipelines</div>
+            <div class="skill-item">Jenkins</div>
+            <div class="skill-item">Git &amp; GitHub</div>
+            <div class="skill-item">CVS</div>
+            <div class="skill-item">Dynamics 365</div>
+            <div class="skill-item">Oracle EBS</div>
+            <div class="skill-item">MuleSoft</div>
+            <div class="skill-item">Python</div>
+            <div class="skill-item">SQL</div>
+            <div class="skill-item">Power BI</div>
+            <div class="skill-item">Machine Learning</div>
+            <div class="skill-item">Data Analysis</div>
+            <div class="skill-item">Excel</div>
+            <div class="skill-item">ServiceNow</div>
+            <div class="skill-item">Jira</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CERTIFICATIONS -->
+      <section class="section">
+        <div class="section-title">Certifications</div>
+        <div class="section-content">
+          <div class="cert-item">Microsoft Azure Fundamentals (AZ-900)</div>
+          <div class="cert-item">Data Science Certification</div>
+          <div class="cert-item">Professional Statistics</div>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section class="section">
+        <div class="section-title">Education</div>
+        <div class="section-content">
+          <div class="edu-degree">Bachelor's Degree</div>
+          <div class="edu-school">[University Name], [Location]</div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ===== RIGHT COLUMN ===== -->
+    <div>
+
+      <!-- PROJECTS -->
+      <section class="section">
+        <div class="section-title">Projects</div>
+        <div class="section-content">
+
+          <div class="project-entry">
+            <div class="project-header">
+              <span class="project-name">House Price Prediction</span>
+              <span class="project-tech">Python · Scikit-learn · Regression</span>
+            </div>
+            <p class="project-desc">Built a machine learning regression model to predict housing prices using feature engineering, cross-validation, and model evaluation metrics (R², RMSE).</p>
+          </div>
+
+          <div class="project-entry">
+            <div class="project-header">
+              <span class="project-name">Portfolio Website</span>
+              <span class="project-tech">React · Vite · Responsive Design</span>
+            </div>
+            <p class="project-desc">Designed and deployed a personal portfolio with smooth animations, responsive layouts, and modern UI, hosted on Vercel.</p>
+          </div>
+
+          <div class="project-entry">
+            <div class="project-header">
+              <span class="project-name">Power BI Dashboards</span>
+              <span class="project-tech">Power BI · DAX · Data Modeling</span>
+            </div>
+            <p class="project-desc">Developed seven interactive analytical dashboards:</p>
+            <ul class="project-list">
+              <li>Zomato — Restaurant ratings, cuisine, and location analytics</li>
+              <li>Blinkit — Quick commerce sales and delivery insights</li>
+              <li>HR — Employee attrition and satisfaction metrics</li>
+              <li>Electric Vehicles — EV adoption and infrastructure trends</li>
+              <li>Superstore — Sales performance and regional analysis</li>
+              <li>Pizza Sales — Order patterns and revenue breakdowns</li>
+              <li>Recruitment — Hiring funnel and time-to-fill KPIs</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CORE COMPETENCIES -->
+      <section class="section">
+        <div class="section-title">Core Competencies</div>
+        <div class="section-content">
+          <div class="comp-tags">
+            <span class="comp-tag">Release Engineering</span>
+            <span class="comp-tag">Azure</span>
+            <span class="comp-tag">CI/CD</span>
+            <span class="comp-tag">Python</span>
+            <span class="comp-tag">SQL</span>
+            <span class="comp-tag">Power BI</span>
+            <span class="comp-tag">Machine Learning</span>
+            <span class="comp-tag">Jenkins</span>
+            <span class="comp-tag">Git</span>
+            <span class="comp-tag">Oracle EBS</span>
+            <span class="comp-tag">Dynamics 365</span>
+            <span class="comp-tag">MuleSoft</span>
+            <span class="comp-tag">Data Analytics</span>
+            <span class="comp-tag">Problem Solving</span>
+            <span class="comp-tag">Automation</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    References available upon request
+  </footer>
+
+</div>
+
+</body>
+</html>
