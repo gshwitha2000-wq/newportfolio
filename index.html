@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ashwitha Gogikar — Portfolio</title>
+  <title>Ashwitha Gogikar — Data Analyst & Release Engineer</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -19,12 +19,10 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Inter', sans-serif; background: #020617; color: #fff; overflow-x: hidden; }
 
-    /* Scrollbar */
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: #020617; }
     ::-webkit-scrollbar-thumb { background: #4f46e5; border-radius: 3px; }
 
-    /* Global fade-in */
     .reveal {
       opacity: 0;
       transform: translateY(40px);
@@ -36,7 +34,6 @@
       transform: translateY(0);
     }
 
-    /* Stagger children */
     .reveal-stagger .reveal-child {
       opacity: 0;
       transform: translateY(30px);
@@ -56,8 +53,14 @@
     .reveal-stagger.active .reveal-child:nth-child(7) { transition-delay: 0.35s; }
     .reveal-stagger.active .reveal-child:nth-child(8) { transition-delay: 0.4s; }
     .reveal-stagger.active .reveal-child:nth-child(9) { transition-delay: 0.45s; }
+    .reveal-stagger.active .reveal-child:nth-child(10) { transition-delay: 0.5s; }
+    .reveal-stagger.active .reveal-child:nth-child(11) { transition-delay: 0.55s; }
+    .reveal-stagger.active .reveal-child:nth-child(12) { transition-delay: 0.6s; }
+    .reveal-stagger.active .reveal-child:nth-child(13) { transition-delay: 0.65s; }
+    .reveal-stagger.active .reveal-child:nth-child(14) { transition-delay: 0.7s; }
+    .reveal-stagger.active .reveal-child:nth-child(15) { transition-delay: 0.75s; }
+    .reveal-stagger.active .reveal-child:nth-child(16) { transition-delay: 0.8s; }
 
-    /* Hero gradient text */
     .gradient-text {
       background: linear-gradient(135deg, #818cf8, #c084fc, #38bdf8);
       -webkit-background-clip: text;
@@ -71,7 +74,6 @@
       background-clip: text;
     }
 
-    /* Glass panel */
     .glass {
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.08);
@@ -87,7 +89,6 @@
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
     }
 
-    /* Hero blob */
     .hero-blob {
       position: absolute;
       border-radius: 50%;
@@ -95,7 +96,6 @@
       pointer-events: none;
     }
 
-    /* Shimmer */
     @keyframes shimmer {
       0% { transform: translateX(-100%); }
       100% { transform: translateX(100%); }
@@ -113,7 +113,6 @@
       animation: shimmer 3s infinite linear;
     }
 
-    /* Ping */
     @keyframes ping {
       75%, 100% { transform: scale(2); opacity: 0; }
     }
@@ -126,14 +125,12 @@
       animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
     }
 
-    /* Floating animation */
     @keyframes float {
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-10px); }
     }
     .float { animation: float 4s ease-in-out infinite; }
 
-    /* Nav active indicator */
     .nav-link {
       position: relative;
       transition: color 0.3s;
@@ -159,7 +156,6 @@
       color: #818cf8;
     }
 
-    /* Project card image overlay */
     .project-card .overlay {
       opacity: 0;
       transition: opacity 0.4s;
@@ -171,19 +167,14 @@
       transform: scale(1.05);
     }
 
-    /* Skill bar animation */
     .skill-bar-fill {
       width: 0;
       transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
-    .skill-bar-fill.active {
-      /* width set inline */
-    }
+    .skill-bar-fill.active {}
 
-    /* Counter */
     .counter { font-variant-numeric: tabular-nums; }
 
-    /* Timeline */
     .timeline-line {
       position: absolute;
       left: 19px;
@@ -193,7 +184,6 @@
       background: linear-gradient(to bottom, rgba(99,102,241,0.5), transparent);
     }
 
-    /* Toast */
     .toast {
       position: fixed;
       bottom: 2rem;
@@ -210,7 +200,6 @@
       opacity: 1;
     }
 
-    /* Mobile menu */
     .mobile-menu {
       max-height: 0;
       overflow: hidden;
@@ -222,7 +211,6 @@
       opacity: 1;
     }
 
-    /* Gradient border card */
     .gradient-border {
       position: relative;
     }
@@ -239,7 +227,6 @@
       pointer-events: none;
     }
 
-    /* Certification badge glow */
     .cert-glow {
       position: relative;
     }
@@ -257,6 +244,19 @@
     .cert-glow:hover::after {
       opacity: 1;
     }
+
+    .filter-tab {
+      transition: all 0.3s;
+    }
+    .filter-tab.active {
+      background: rgba(99, 102, 241, 0.15);
+      border-color: rgba(99, 102, 241, 0.3);
+      color: #818cf8;
+    }
+    .filter-tab:not(.active):hover {
+      background: rgba(255, 255, 255, 0.05);
+      color: #cbd5e1;
+    }
   </style>
 </head>
 <body class="font-inter antialiased">
@@ -265,24 +265,20 @@
   <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="flex items-center justify-between h-16 md:h-20">
-        <!-- Logo -->
         <a href="#home" class="flex items-center gap-2 group">
           <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white font-semibold text-sm group-hover:shadow-lg group-hover:shadow-indigo-500/25 transition-shadow duration-300">A</div>
           <span class="text-white font-medium text-sm hidden sm:block">Ashwitha</span>
         </a>
-
-        <!-- Desktop Nav -->
         <div class="hidden md:flex items-center gap-1">
           <a href="#home" class="nav-link active text-sm font-light text-slate-400 px-3 py-2 rounded-lg hover:bg-white/5">Home</a>
           <a href="#about" class="nav-link text-sm font-light text-slate-400 px-3 py-2 rounded-lg hover:bg-white/5">About</a>
           <a href="#experience" class="nav-link text-sm font-light text-slate-400 px-3 py-2 rounded-lg hover:bg-white/5">Experience</a>
           <a href="#projects" class="nav-link text-sm font-light text-slate-400 px-3 py-2 rounded-lg hover:bg-white/5">Projects</a>
           <a href="#skills" class="nav-link text-sm font-light text-slate-400 px-3 py-2 rounded-lg hover:bg-white/5">Skills</a>
+          <a href="#education" class="nav-link text-sm font-light text-slate-400 px-3 py-2 rounded-lg hover:bg-white/5">Education</a>
           <a href="#certifications" class="nav-link text-sm font-light text-slate-400 px-3 py-2 rounded-lg hover:bg-white/5">Certifications</a>
           <a href="#contact" class="nav-link text-sm font-light text-slate-400 px-3 py-2 rounded-lg hover:bg-white/5">Contact</a>
         </div>
-
-        <!-- CTA + Mobile Toggle -->
         <div class="flex items-center gap-3">
           <a href="#contact" class="hidden sm:inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-medium px-4 py-2.5 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/25">
             Let's Talk
@@ -294,8 +290,6 @@
           </button>
         </div>
       </div>
-
-      <!-- Mobile Menu -->
       <div id="mobileMenu" class="mobile-menu md:hidden">
         <div class="py-3 space-y-1 border-t border-white/5">
           <a href="#home" class="block text-sm font-light text-slate-400 px-3 py-2.5 rounded-lg hover:bg-white/5 hover:text-white transition-colors" onclick="closeMobile()">Home</a>
@@ -303,6 +297,7 @@
           <a href="#experience" class="block text-sm font-light text-slate-400 px-3 py-2.5 rounded-lg hover:bg-white/5 hover:text-white transition-colors" onclick="closeMobile()">Experience</a>
           <a href="#projects" class="block text-sm font-light text-slate-400 px-3 py-2.5 rounded-lg hover:bg-white/5 hover:text-white transition-colors" onclick="closeMobile()">Projects</a>
           <a href="#skills" class="block text-sm font-light text-slate-400 px-3 py-2.5 rounded-lg hover:bg-white/5 hover:text-white transition-colors" onclick="closeMobile()">Skills</a>
+          <a href="#education" class="block text-sm font-light text-slate-400 px-3 py-2.5 rounded-lg hover:bg-white/5 hover:text-white transition-colors" onclick="closeMobile()">Education</a>
           <a href="#certifications" class="block text-sm font-light text-slate-400 px-3 py-2.5 rounded-lg hover:bg-white/5 hover:text-white transition-colors" onclick="closeMobile()">Certifications</a>
           <a href="#contact" class="block text-sm font-light text-slate-400 px-3 py-2.5 rounded-lg hover:bg-white/5 hover:text-white transition-colors" onclick="closeMobile()">Contact</a>
         </div>
@@ -312,57 +307,42 @@
 
   <!-- ==================== HERO ==================== -->
   <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-    <!-- Background effects -->
     <div class="hero-blob w-[500px] h-[500px] bg-indigo-600/20 top-[-10%] left-[-10%]"></div>
     <div class="hero-blob w-[400px] h-[400px] bg-purple-600/15 bottom-[-5%] right-[-5%]"></div>
     <div class="hero-blob w-[300px] h-[300px] bg-cyan-500/10 top-[40%] right-[20%]"></div>
     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#020617]"></div>
 
     <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-      <!-- Status badge -->
       <div class="reveal inline-flex items-center gap-2.5 glass rounded-full px-4 py-2 mb-8">
         <span class="relative flex h-2.5 w-2.5 ping-dot">
           <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
         </span>
-        <span class="text-xs font-light text-slate-300 tracking-wide">Available for opportunities</span>
+        <span class="text-xs font-light text-slate-300 tracking-wide">Available for Data Analyst roles</span>
       </div>
 
-      <!-- Profile Image -->
-     <div class="reveal mb-8" style="transition-delay: 0.1s">
-  <div class="float inline-block">
-    <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full p-[3px] bg-gradient-to-br from-indigo-500 via-purple-500 to-cyan-500 mx-auto">
-
-      <div class="w-full h-full rounded-full overflow-hidden bg-slate-900 flex items-center justify-center">
-
-        <img
-          src="profile.jpeg"
-          alt="Ashwitha Profile"
-          class="w-full h-full object-cover"
-        />
-
+      <div class="reveal mb-8" style="transition-delay: 0.1s">
+        <div class="float inline-block">
+          <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full p-[3px] bg-gradient-to-br from-indigo-500 via-purple-500 to-cyan-500 mx-auto">
+            <div class="w-full h-full rounded-full overflow-hidden bg-slate-900 flex items-center justify-center">
+              <img src="profile.jpeg" alt="Ashwitha Profile" class="w-full h-full object-cover" />
+            </div>
+          </div>
+        </div>
       </div>
 
-    </div>
-  </div>
-</div>
-
-      <!-- Heading -->
       <h1 class="reveal text-4xl sm:text-5xl md:text-7xl font-extralight tracking-tight leading-[1.1] mb-6" style="transition-delay: 0.2s">
         Hello, I'm<br/>
         <span class="gradient-text font-light">Ashwitha Gogikar</span>
       </h1>
 
-      <!-- Subtitle -->
       <p class="reveal text-sm sm:text-base font-light text-slate-400 tracking-wide mb-4" style="transition-delay: 0.3s">
-        Release Engineer <span class="text-indigo-400 mx-1.5">·</span> Data Analyst <span class="text-indigo-400 mx-1.5">·</span> Machine Learning Enthusiast
+        Data Analyst <span class="text-indigo-400 mx-1.5">·</span> Release Engineer <span class="text-indigo-400 mx-1.5">·</span> Power BI Developer
       </p>
 
-      <!-- Description -->
       <p class="reveal text-sm sm:text-base font-light text-slate-500 max-w-2xl mx-auto leading-relaxed mb-10" style="transition-delay: 0.4s">
-        Experienced Release Engineer with <span class="text-slate-300">4.5+ years</span> in managing enterprise deployments, CI/CD pipelines, and Azure cloud environments. Skilled in automating release processes and delivering reliable solutions across multiple enterprise applications.
+        Data Analyst and Release Engineer with <span class="text-slate-300">5 years of IT experience</span> — including 3.5 years in Release & Configuration Management and 1.5 years of hands-on data analytics and reporting. Skilled in SQL, Python, Power BI, Advanced Excel, and enterprise release management.
       </p>
 
-      <!-- CTA Buttons -->
       <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-4" style="transition-delay: 0.5s">
         <a href="#projects" class="group inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium px-6 py-3.5 rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/25 hover:-translate-y-0.5">
           View My Work
@@ -374,7 +354,6 @@
         </a>
       </div>
 
-      <!-- Scroll indicator -->
       <div class="reveal absolute bottom-10 left-1/2 -translate-x-1/2" style="transition-delay: 0.8s">
         <a href="#about" class="flex flex-col items-center gap-2 text-slate-600 hover:text-slate-400 transition-colors">
           <span class="text-[10px] tracking-widest uppercase">Scroll</span>
@@ -390,12 +369,10 @@
   <section id="about" class="relative py-24 md:py-32">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-        <!-- Left: Visual -->
         <div class="reveal">
           <div class="relative">
             <div class="gradient-border rounded-2xl overflow-hidden">
               <div class="glass rounded-2xl p-8 md:p-10">
-                <!-- Code block aesthetic -->
                 <div class="flex items-center gap-2 mb-6">
                   <div class="w-3 h-3 rounded-full bg-red-500/60"></div>
                   <div class="w-3 h-3 rounded-full bg-yellow-500/60"></div>
@@ -404,47 +381,47 @@
                 </div>
                 <div class="font-mono text-sm leading-7 space-y-1">
                   <p><span class="text-purple-400">const</span> <span class="text-cyan-400">ashwitha</span> = {</p>
-                  <p class="pl-4"><span class="text-green-400">role</span>: <span class="text-amber-300">"Release Engineer"</span>,</p>
-                  <p class="pl-4"><span class="text-green-400">passion</span>: <span class="text-amber-300">"Data & ML"</span>,</p>
-                  <p class="pl-4"><span class="text-green-400">experience</span>: <span class="text-indigo-400">4.5</span>,</p>
-                  <p class="pl-4"><span class="text-green-400">skills</span>: [</p>
-                  <p class="pl-8"><span class="text-amber-300">"Azure"</span>, <span class="text-amber-300">"CI/CD"</span>,</p>
-                  <p class="pl-8"><span class="text-amber-300">"Power BI"</span>, <span class="text-amber-300">"Python"</span>,</p>
-                  <p class="pl-8"><span class="text-amber-300">"Machine Learning"</span></p>
-                  <p class="pl-4">],</p>
-                  <p class="pl-4"><span class="text-green-400">goal</span>: <span class="text-amber-300">"Impactful Solutions"</span></p>
+                  <p class="pl-4"><span class="text-green-400">location</span>: <span class="text-amber-300">"Hyderabad, India"</span>,</p>
+                  <p class="pl-4"><span class="text-green-400">roles</span>: [<span class="text-amber-300">"Data Analyst"</span>, <span class="text-amber-300">"Release Engineer"</span>],</p>
+                  <p class="pl-4"><span class="text-green-400">experience</span>: <span class="text-indigo-400">5</span>,</p>
+                  <p class="pl-4"><span class="text-green-400">releaseMgmt</span>: <span class="text-amber-300">"3.5 years"</span>,</p>
+                  <p class="pl-4"><span class="text-green-400">dataAnalytics</span>: <span class="text-amber-300">"1.5 years"</span>,</p>
+                  <p class="pl-4"><span class="text-green-400">education</span>: <span class="text-amber-300">"M.Sc Statistics"</span>,</p>
+                  <p class="pl-4"><span class="text-green-400">targetRoles</span>: [</p>
+                  <p class="pl-8"><span class="text-amber-300">"Data Analyst"</span>,</p>
+                  <p class="pl-8"><span class="text-amber-300">"BI Analyst"</span>,</p>
+                  <p class="pl-8"><span class="text-amber-300">"Reporting Analyst"</span></p>
+                  <p class="pl-4">]</p>
                   <p>};</p>
                 </div>
               </div>
             </div>
-            <!-- Decorative glow -->
             <div class="absolute -top-10 -right-10 w-40 h-40 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
           </div>
         </div>
 
-        <!-- Right: Content -->
         <div>
           <div class="reveal">
             <p class="text-[11px] font-medium tracking-widest uppercase text-indigo-400 mb-4">About Me</p>
             <h2 class="text-3xl md:text-4xl font-light tracking-tight mb-6">
-              Combining <span class="gradient-text font-normal">Engineering Precision</span> with Data Insights
+              Combining <span class="gradient-text font-normal">Release Engineering</span> with Data Analytics
             </h2>
           </div>
           <div class="reveal space-y-4" style="transition-delay: 0.15s">
             <p class="text-sm font-light text-slate-400 leading-relaxed">
-              Hi, I'm Ashwitha Gogikar — Release Engineer, Data Analyst, and Machine Learning Enthusiast. I enjoy building enterprise solutions, data-driven applications, and modern dashboards.
+              I'm Ashwitha Gogikar — a Data Analyst and Release Engineer based in Hyderabad, India. With 5 years of IT experience, I bring a unique blend of operational analytics expertise and enterprise release management skills.
             </p>
             <p class="text-sm font-light text-slate-400 leading-relaxed">
-              My goal is to combine engineering precision with data insights to create impactful solutions. I thrive at the intersection of deployment automation and data visualization, bringing clarity to complex systems.
+              My data analytics work includes analyzing deployment-tracker data, preparing weekly and monthly KPI reports, identifying deployment patterns, and building interactive Power BI dashboards. My release engineering background gives me deep understanding of enterprise data flows across Dynamics 365, Oracle EBS, AEM, MuleSoft, and Azure environments.
             </p>
           </div>
           <div class="reveal mt-8 flex flex-wrap gap-3" style="transition-delay: 0.3s">
-            <span class="glass text-xs font-light text-slate-300 px-3.5 py-2 rounded-lg">🔧 CI/CD</span>
+            <span class="glass text-xs font-light text-slate-300 px-3.5 py-2 rounded-lg">📊 Data Analytics</span>
+            <span class="glass text-xs font-light text-slate-300 px-3.5 py-2 rounded-lg">📈 Power BI & DAX</span>
+            <span class="glass text-xs font-light text-slate-300 px-3.5 py-2 rounded-lg">🐍 Python & SQL</span>
+            <span class="glass text-xs font-light text-slate-300 px-3.5 py-2 rounded-lg">🔒 Release Management</span>
             <span class="glass text-xs font-light text-slate-300 px-3.5 py-2 rounded-lg">☁️ Azure Cloud</span>
-            <span class="glass text-xs font-light text-slate-300 px-3.5 py-2 rounded-lg">📊 Data Analysis</span>
-            <span class="glass text-xs font-light text-slate-300 px-3.5 py-2 rounded-lg">🤖 Machine Learning</span>
-            <span class="glass text-xs font-light text-slate-300 px-3.5 py-2 rounded-lg">🐍 Python</span>
-            <span class="glass text-xs font-light text-slate-300 px-3.5 py-2 rounded-lg">📈 Power BI</span>
+            <span class="glass text-xs font-light text-slate-300 px-3.5 py-2 rounded-lg">📋 KPI Reporting</span>
           </div>
         </div>
       </div>
@@ -461,66 +438,106 @@
       </div>
 
       <div class="max-w-3xl mx-auto">
-        <!-- Timeline Item -->
+        <!-- Timeline Item 1: Release Engineering -->
         <div class="reveal relative pl-12 pb-12">
           <div class="timeline-line"></div>
-          <!-- Dot -->
           <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center">
             <div class="w-3 h-3 rounded-full bg-indigo-500"></div>
           </div>
-          <!-- Content -->
           <div class="gradient-border rounded-2xl">
             <div class="glass rounded-2xl p-6 md:p-8">
-              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
                 <div>
                   <h3 class="text-lg font-medium text-white">Information Technology Senior Associate</h3>
                   <p class="text-sm text-indigo-400 font-light">Release Engineer</p>
                 </div>
                 <div class="text-right">
                   <p class="text-sm font-medium text-white">NTT DATA</p>
-                  <p class="text-xs text-slate-500 font-light">Sep 2021 – Present</p>
+                  <p class="text-xs text-slate-500 font-light">Hyderabad, India | 2021 – Present</p>
                 </div>
               </div>
+              <p class="text-xs text-slate-600 font-light mb-4">5 Years Total Experience</p>
               <div class="shimmer-line h-px bg-white/5 mb-5"></div>
-              <ul class="space-y-3">
+
+              <!-- Release Engineering Subsection -->
+              <p class="text-[11px] font-medium tracking-widest uppercase text-indigo-400/70 mb-3">Release Engineering & Configuration Management — 3.5 Years</p>
+              <ul class="space-y-3 mb-6">
                 <li class="flex items-start gap-3 text-sm font-light text-slate-400">
                   <svg class="w-4 h-4 text-indigo-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-                  Managed production deployments and release activities across enterprise systems
+                  Managed end-to-end release and deployment activities across <span class="text-slate-300">DEV, INT, SYS, UAT, OAT</span> and Production environments
                 </li>
                 <li class="flex items-start gap-3 text-sm font-light text-slate-400">
                   <svg class="w-4 h-4 text-indigo-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-                  Worked on <span class="text-slate-300">Dynamics 365</span>, <span class="text-slate-300">Oracle EBS</span>, <span class="text-slate-300">Azure</span> and <span class="text-slate-300">MuleSoft</span>
+                  Performed build, packaging, code promotion, branching, merging and deployments using <span class="text-slate-300">Git</span> and <span class="text-slate-300">CVS</span>
                 </li>
                 <li class="flex items-start gap-3 text-sm font-light text-slate-400">
                   <svg class="w-4 h-4 text-indigo-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-                  Performed CI/CD deployments using <span class="text-slate-300">Jenkins</span>, <span class="text-slate-300">Git</span> and <span class="text-slate-300">CVS</span>
+                  Supported <span class="text-slate-300">Dynamics 365</span> deployments through Lifecycle Services (LCS) — configuration, Service Updates, Quality Updates, environment refreshes
                 </li>
                 <li class="flex items-start gap-3 text-sm font-light text-slate-400">
                   <svg class="w-4 h-4 text-indigo-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-                  Executed environment refresher and deployment validations
+                  Coordinated enterprise releases across <span class="text-slate-300">Dynamics 365</span>, <span class="text-slate-300">Oracle EBS</span>, <span class="text-slate-300">AEM</span>, <span class="text-slate-300">MuleSoft</span>, <span class="text-slate-300">Oracle Portal</span> and <span class="text-slate-300">Azure</span>
                 </li>
                 <li class="flex items-start gap-3 text-sm font-light text-slate-400">
                   <svg class="w-4 h-4 text-indigo-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-                  Managed Azure environments and Lifecycle Services (LCS)
+                  Created and managed <span class="text-slate-300">Jira</span> and <span class="text-slate-300">ServiceNow</span> incidents, service requests and change records; maintained documentation in <span class="text-slate-300">Confluence</span>
                 </li>
                 <li class="flex items-start gap-3 text-sm font-light text-slate-400">
                   <svg class="w-4 h-4 text-indigo-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-                  Created <span class="text-slate-300">Jira</span>, <span class="text-slate-300">ServiceNow</span> and Change Management tickets
+                  Executed post-deployment validation, environment checks and release verification for stable production releases
                 </li>
                 <li class="flex items-start gap-3 text-sm font-light text-slate-400">
                   <svg class="w-4 h-4 text-indigo-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-                  Automated repetitive deployment tasks using <span class="text-slate-300">Python</span>
+                  Developed <span class="text-slate-300">Python</span> scripts to automate repetitive operational activities and improve release-process efficiency
                 </li>
               </ul>
+
+              <!-- Data Analytics Subsection -->
+              <div class="shimmer-line h-px bg-white/5 mb-5"></div>
+              <p class="text-[11px] font-medium tracking-widest uppercase text-cyan-400/70 mb-3">Data Analytics & Operational Reporting — 1.5 Years</p>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-3 text-sm font-light text-slate-400">
+                  <svg class="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                  Analyzed deployment-tracker data and prepared weekly and monthly operational reports covering successful, failed and pending deployments
+                </li>
+                <li class="flex items-start gap-3 text-sm font-light text-slate-400">
+                  <svg class="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                  Tracked and reported branches created, deployments completed, and releases promoted to Production vs non-Production environments
+                </li>
+                <li class="flex items-start gap-3 text-sm font-light text-slate-400">
+                  <svg class="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                  Built environment-wise reporting views for <span class="text-slate-300">DEV, INT, SYS, UAT, OAT</span> for deployment volume, status, backlog and release progress
+                </li>
+                <li class="flex items-start gap-3 text-sm font-light text-slate-400">
+                  <svg class="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                  Performed data validation, aggregation and trend analysis to identify exceptions, recurring failures and operational trends
+                </li>
+                <li class="flex items-start gap-3 text-sm font-light text-slate-400">
+                  <svg class="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                  Prepared management-ready KPI reports translating raw operational records into concise insights for stakeholders
+                </li>
+                <li class="flex items-start gap-3 text-sm font-light text-slate-400">
+                  <svg class="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                  Applied hands-on analytics using <span class="text-slate-300">SQL</span>, <span class="text-slate-300">Python</span>, <span class="text-slate-300">Power BI</span> and <span class="text-slate-300">Advanced Excel</span>
+                </li>
+              </ul>
+
               <!-- Tech tags -->
               <div class="flex flex-wrap gap-2 mt-6 pt-5 border-t border-white/5">
                 <span class="text-[10px] font-medium tracking-wide text-slate-500 bg-white/5 px-2.5 py-1 rounded-md">Azure</span>
                 <span class="text-[10px] font-medium tracking-wide text-slate-500 bg-white/5 px-2.5 py-1 rounded-md">Jenkins</span>
+                <span class="text-[10px] font-medium tracking-wide text-slate-500 bg-white/5 px-2.5 py-1 rounded-md">Hudson</span>
+                <span class="text-[10px] font-medium tracking-wide text-slate-500 bg-white/5 px-2.5 py-1 rounded-md">TeamCity</span>
                 <span class="text-[10px] font-medium tracking-wide text-slate-500 bg-white/5 px-2.5 py-1 rounded-md">Dynamics 365</span>
                 <span class="text-[10px] font-medium tracking-wide text-slate-500 bg-white/5 px-2.5 py-1 rounded-md">Oracle EBS</span>
+                <span class="text-[10px] font-medium tracking-wide text-slate-500 bg-white/5 px-2.5 py-1 rounded-md">AEM</span>
                 <span class="text-[10px] font-medium tracking-wide text-slate-500 bg-white/5 px-2.5 py-1 rounded-md">MuleSoft</span>
                 <span class="text-[10px] font-medium tracking-wide text-slate-500 bg-white/5 px-2.5 py-1 rounded-md">Python</span>
+                <span class="text-[10px] font-medium tracking-wide text-slate-500 bg-white/5 px-2.5 py-1 rounded-md">SQL</span>
+                <span class="text-[10px] font-medium tracking-wide text-slate-500 bg-white/5 px-2.5 py-1 rounded-md">Power BI</span>
                 <span class="text-[10px] font-medium tracking-wide text-slate-500 bg-white/5 px-2.5 py-1 rounded-md">Git</span>
+                <span class="text-[10px] font-medium tracking-wide text-slate-500 bg-white/5 px-2.5 py-1 rounded-md">Jira</span>
+                <span class="text-[10px] font-medium tracking-wide text-slate-500 bg-white/5 px-2.5 py-1 rounded-md">ServiceNow</span>
               </div>
             </div>
           </div>
@@ -530,39 +547,227 @@
   </section>
 
   <!-- ==================== PROJECTS ==================== -->
- <section id="projects" class="relative py-24 md:py-32">
+  <section id="projects" class="relative py-24 md:py-32">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="reveal text-center mb-16">
+      <div class="reveal text-center mb-10">
         <p class="text-[11px] font-medium tracking-widest uppercase text-indigo-400 mb-4">Portfolio</p>
         <h2 class="text-3xl md:text-4xl font-light tracking-tight">Featured <span class="gradient-text font-normal">Projects</span></h2>
-        <p class="text-sm font-light text-slate-500 mt-4 max-w-lg mx-auto">A collection of dashboards, ML models, and web applications built with modern tools.</p>
+        <p class="text-sm font-light text-slate-500 mt-4 max-w-lg mx-auto">Data analysis projects, machine learning models, and Power BI dashboards built with Python and Power BI.</p>
       </div>
 
-      <div class="reveal-stagger grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        <!-- Project 1 -->
-        <div class="reveal-child project-card group glass glass-hover rounded-2xl overflow-hidden cursor-pointer">
+      <div class="reveal flex flex-wrap items-center justify-center gap-2 mb-12">
+        <button class="filter-tab active text-xs font-medium text-slate-400 border border-white/10 px-4 py-2 rounded-lg" data-filter="all">All Projects</button>
+        <button class="filter-tab text-xs font-medium text-slate-500 border border-white/5 px-4 py-2 rounded-lg" data-filter="python">🐍 Python</button>
+        <button class="filter-tab text-xs font-medium text-slate-500 border border-white/5 px-4 py-2 rounded-lg" data-filter="ml">🤖 Machine Learning</button>
+        <button class="filter-tab text-xs font-medium text-slate-500 border border-white/5 px-4 py-2 rounded-lg" data-filter="powerbi">📊 Power BI</button>
+      </div>
+
+      <div id="projectsGrid" class="reveal-stagger grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <!-- 1: Zomato Data Project (Python) -->
+        <div class="reveal-child project-card group glass glass-hover rounded-2xl overflow-hidden cursor-pointer" data-category="python">
           <div class="relative h-44 overflow-hidden">
-            <img src="https://picsum.photos/seed/zomato-dash/600/350.jpg" alt="Zomato Dashboard" class="project-img w-full h-full object-cover transition-transform duration-700" />
+            <img src="https://picsum.photos/seed/zomato-python-data/600/350.jpg" alt="Zomato Data Project" class="project-img w-full h-full object-cover transition-transform duration-700" />
             <div class="overlay absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent flex items-end p-5">
-              <a href="https://github.com/gshwitha2000-wq/Zomato-Data-Analysis-using-Power-BI" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-medium text-white bg-indigo-600/90 hover:bg-indigo-500 px-3.5 py-2 rounded-lg transition-colors backdrop-blur-sm">
+              <a href="https://github.com/gshwitha2000-wq/Zomato-Data-Project-using-Python" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-medium text-white bg-indigo-600/90 hover:bg-indigo-500 px-3.5 py-2 rounded-lg transition-colors backdrop-blur-sm">
                 <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
                 View Code
               </a>
             </div>
             <div class="absolute top-3 right-3">
-              <span class="text-[10px] font-medium tracking-wide text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 px-2.5 py-1 rounded-md backdrop-blur-sm">Power BI</span>
+              <span class="text-[10px] font-medium tracking-wide text-amber-300 bg-amber-500/10 border border-amber-500/20 px-2.5 py-1 rounded-md backdrop-blur-sm">Python</span>
             </div>
           </div>
           <div class="p-5">
-            <h3 class="text-base font-medium text-white mb-1.5">Zomato Data Dashboard</h3>
-            <p class="text-xs font-light text-slate-500 leading-relaxed">Interactive Power BI dashboard visualizing Zomato restaurant data with insights on ratings, cuisines, and locations.</p>
+            <h3 class="text-base font-medium text-white mb-1.5">Zomato Data Project</h3>
+            <p class="text-xs font-light text-slate-500 leading-relaxed">Exploratory data analysis of Zomato restaurant data using Python with insights on ratings, cuisines, cost, and location trends.</p>
           </div>
         </div>
 
-        <!-- Project 2 -->
-        <div class="reveal-child project-card group glass glass-hover rounded-2xl overflow-hidden cursor-pointer">
+        <!-- 2: Google Playstore Project (Python) -->
+        <div class="reveal-child project-card group glass glass-hover rounded-2xl overflow-hidden cursor-pointer" data-category="python">
           <div class="relative h-44 overflow-hidden">
-            <img src="https://picsum.photos/seed/house-price-ml/600/350.jpg" alt="ML Model" class="project-img w-full h-full object-cover transition-transform duration-700" />
+            <img src="https://picsum.photos/seed/playstore-python-viz/600/350.jpg" alt="Google Playstore Project" class="project-img w-full h-full object-cover transition-transform duration-700" />
+            <div class="overlay absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent flex items-end p-5">
+              <a href="https://github.com/gshwitha2000-wq/Google-Playstore-Project-using-Python" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-medium text-white bg-indigo-600/90 hover:bg-indigo-500 px-3.5 py-2 rounded-lg transition-colors backdrop-blur-sm">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                View Code
+              </a>
+            </div>
+            <div class="absolute top-3 right-3">
+              <span class="text-[10px] font-medium tracking-wide text-amber-300 bg-amber-500/10 border border-amber-500/20 px-2.5 py-1 rounded-md backdrop-blur-sm">Python</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <h3 class="text-base font-medium text-white mb-1.5">Google Playstore Project</h3>
+            <p class="text-xs font-light text-slate-500 leading-relaxed">Analysis of Google Play Store apps data exploring categories, ratings, installs, pricing, and user sentiment patterns.</p>
+          </div>
+        </div>
+
+        <!-- 3: Diwali Sales Project (Python) -->
+        <div class="reveal-child project-card group glass glass-hover rounded-2xl overflow-hidden cursor-pointer" data-category="python">
+          <div class="relative h-44 overflow-hidden">
+            <img src="https://picsum.photos/seed/diwali-sales-python/600/350.jpg" alt="Diwali Sales Project" class="project-img w-full h-full object-cover transition-transform duration-700" />
+            <div class="overlay absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent flex items-end p-5">
+              <a href="https://github.com/gshwitha2000-wq/Diwali-Sales-Project-using-Python/tree/main" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-medium text-white bg-indigo-600/90 hover:bg-indigo-500 px-3.5 py-2 rounded-lg transition-colors backdrop-blur-sm">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                View Code
+              </a>
+            </div>
+            <div class="absolute top-3 right-3">
+              <span class="text-[10px] font-medium tracking-wide text-amber-300 bg-amber-500/10 border border-amber-500/20 px-2.5 py-1 rounded-md backdrop-blur-sm">Python</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <h3 class="text-base font-medium text-white mb-1.5">Diwali Sales Project</h3>
+            <p class="text-xs font-light text-slate-500 leading-relaxed">Deep-dive analysis of Diwali festival sales data uncovering customer demographics, product trends, and purchase behavior.</p>
+          </div>
+        </div>
+
+        <!-- 4: Blinkit Data Project (Python) -->
+        <div class="reveal-child project-card group glass glass-hover rounded-2xl overflow-hidden cursor-pointer" data-category="python">
+          <div class="relative h-44 overflow-hidden">
+            <img src="https://picsum.photos/seed/blinkit-python-analysis/600/350.jpg" alt="Blinkit Data Project" class="project-img w-full h-full object-cover transition-transform duration-700" />
+            <div class="overlay absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent flex items-end p-5">
+              <a href="https://github.com/gshwitha2000-wq/Blinkit-Data-Project-using-Python" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-medium text-white bg-indigo-600/90 hover:bg-indigo-500 px-3.5 py-2 rounded-lg transition-colors backdrop-blur-sm">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                View Code
+              </a>
+            </div>
+            <div class="absolute top-3 right-3">
+              <span class="text-[10px] font-medium tracking-wide text-amber-300 bg-amber-500/10 border border-amber-500/20 px-2.5 py-1 rounded-md backdrop-blur-sm">Python</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <h3 class="text-base font-medium text-white mb-1.5">Blinkit Data Project</h3>
+            <p class="text-xs font-light text-slate-500 leading-relaxed">Comprehensive analysis of Blinkit quick commerce data exploring product categories, outlet performance, and sales patterns.</p>
+          </div>
+        </div>
+
+        <!-- 5: Udemy Courses Project (Python) -->
+        <div class="reveal-child project-card group glass glass-hover rounded-2xl overflow-hidden cursor-pointer" data-category="python">
+          <div class="relative h-44 overflow-hidden">
+            <img src="https://picsum.photos/seed/udemy-courses-python/600/350.jpg" alt="Udemy Courses Project" class="project-img w-full h-full object-cover transition-transform duration-700" />
+            <div class="overlay absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent flex items-end p-5">
+              <a href="https://github.com/gshwitha2000-wq/Udemy-Courses-Project-using-Python" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-medium text-white bg-indigo-600/90 hover:bg-indigo-500 px-3.5 py-2 rounded-lg transition-colors backdrop-blur-sm">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                View Code
+              </a>
+            </div>
+            <div class="absolute top-3 right-3">
+              <span class="text-[10px] font-medium tracking-wide text-amber-300 bg-amber-500/10 border border-amber-500/20 px-2.5 py-1 rounded-md backdrop-blur-sm">Python</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <h3 class="text-base font-medium text-white mb-1.5">Udemy Courses Project</h3>
+            <p class="text-xs font-light text-slate-500 leading-relaxed">Analysis of Udemy course data examining pricing strategies, subject popularity, subscriber trends, and content engagement.</p>
+          </div>
+        </div>
+
+        <!-- 6: SuperMarket Analysis Project (Python) -->
+        <div class="reveal-child project-card group glass glass-hover rounded-2xl overflow-hidden cursor-pointer" data-category="python">
+          <div class="relative h-44 overflow-hidden">
+            <img src="https://picsum.photos/seed/supermarket-python-analysis/600/350.jpg" alt="SuperMarket Analysis Project" class="project-img w-full h-full object-cover transition-transform duration-700" />
+            <div class="overlay absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent flex items-end p-5">
+              <a href="https://github.com/gshwitha2000-wq/SuperMarket-Analysis-Project-using-Python" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-medium text-white bg-indigo-600/90 hover:bg-indigo-500 px-3.5 py-2 rounded-lg transition-colors backdrop-blur-sm">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                View Code
+              </a>
+            </div>
+            <div class="absolute top-3 right-3">
+              <span class="text-[10px] font-medium tracking-wide text-amber-300 bg-amber-500/10 border border-amber-500/20 px-2.5 py-1 rounded-md backdrop-blur-sm">Python</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <h3 class="text-base font-medium text-white mb-1.5">SuperMarket Analysis Project</h3>
+            <p class="text-xs font-light text-slate-500 leading-relaxed">Data analysis of supermarket sales exploring branch performance, product lines, customer types, and payment methods.</p>
+          </div>
+        </div>
+
+        <!-- 7: Movie Recommendation System (ML) -->
+        <div class="reveal-child project-card group glass glass-hover rounded-2xl overflow-hidden cursor-pointer" data-category="ml">
+          <div class="relative h-44 overflow-hidden">
+            <img src="https://picsum.photos/seed/movie-recommendation-ml/600/350.jpg" alt="Movie Recommendation System" class="project-img w-full h-full object-cover transition-transform duration-700" />
+            <div class="overlay absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent flex items-end p-5">
+              <a href="https://github.com/gshwitha2000-wq/Movie-Recommendation-System-using-Machine-Learning" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-medium text-white bg-indigo-600/90 hover:bg-indigo-500 px-3.5 py-2 rounded-lg transition-colors backdrop-blur-sm">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                View Code
+              </a>
+            </div>
+            <div class="absolute top-3 right-3">
+              <span class="text-[10px] font-medium tracking-wide text-purple-300 bg-purple-500/10 border border-purple-500/20 px-2.5 py-1 rounded-md backdrop-blur-sm">Machine Learning</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <h3 class="text-base font-medium text-white mb-1.5">Movie Recommendation System</h3>
+            <p class="text-xs font-light text-slate-500 leading-relaxed">Content-based and collaborative filtering recommendation system suggesting movies based on user preferences and similarity scores.</p>
+          </div>
+        </div>
+
+        <!-- 8: Loan Approval Prediction (ML) -->
+        <div class="reveal-child project-card group glass glass-hover rounded-2xl overflow-hidden cursor-pointer" data-category="ml">
+          <div class="relative h-44 overflow-hidden">
+            <img src="https://picsum.photos/seed/loan-approval-ml/600/350.jpg" alt="Loan Approval Prediction" class="project-img w-full h-full object-cover transition-transform duration-700" />
+            <div class="overlay absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent flex items-end p-5">
+              <a href="https://github.com/gshwitha2000-wq/Loan-Approval-Prediction-using-Machine-Learning" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-medium text-white bg-indigo-600/90 hover:bg-indigo-500 px-3.5 py-2 rounded-lg transition-colors backdrop-blur-sm">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                View Code
+              </a>
+            </div>
+            <div class="absolute top-3 right-3">
+              <span class="text-[10px] font-medium tracking-wide text-purple-300 bg-purple-500/10 border border-purple-500/20 px-2.5 py-1 rounded-md backdrop-blur-sm">Machine Learning</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <h3 class="text-base font-medium text-white mb-1.5">Loan Approval Prediction</h3>
+            <p class="text-xs font-light text-slate-500 leading-relaxed">Classification model predicting loan approval status using applicant features like income, credit history, and employment details.</p>
+          </div>
+        </div>
+
+        <!-- 9: Heart Disease Prediction (ML) -->
+        <div class="reveal-child project-card group glass glass-hover rounded-2xl overflow-hidden cursor-pointer" data-category="ml">
+          <div class="relative h-44 overflow-hidden">
+            <img src="https://picsum.photos/seed/heart-disease-ml/600/350.jpg" alt="Heart Disease Prediction" class="project-img w-full h-full object-cover transition-transform duration-700" />
+            <div class="overlay absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent flex items-end p-5">
+              <a href="https://github.com/gshwitha2000-wq/Heart-Disease-Prediction-using-Machine-Learning" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-medium text-white bg-indigo-600/90 hover:bg-indigo-500 px-3.5 py-2 rounded-lg transition-colors backdrop-blur-sm">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                View Code
+              </a>
+            </div>
+            <div class="absolute top-3 right-3">
+              <span class="text-[10px] font-medium tracking-wide text-purple-300 bg-purple-500/10 border border-purple-500/20 px-2.5 py-1 rounded-md backdrop-blur-sm">Machine Learning</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <h3 class="text-base font-medium text-white mb-1.5">Heart Disease Prediction</h3>
+            <p class="text-xs font-light text-slate-500 leading-relaxed">Predictive model identifying heart disease risk using clinical parameters like cholesterol, blood pressure, and heart rate indicators.</p>
+          </div>
+        </div>
+
+        <!-- 10: Spam Detection (ML) -->
+        <div class="reveal-child project-card group glass glass-hover rounded-2xl overflow-hidden cursor-pointer" data-category="ml">
+          <div class="relative h-44 overflow-hidden">
+            <img src="https://picsum.photos/seed/spam-detection-ml/600/350.jpg" alt="Spam Detection" class="project-img w-full h-full object-cover transition-transform duration-700" />
+            <div class="overlay absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent flex items-end p-5">
+              <a href="https://github.com/gshwitha2000-wq/Spam-Detection-using-Machine-Learning" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-medium text-white bg-indigo-600/90 hover:bg-indigo-500 px-3.5 py-2 rounded-lg transition-colors backdrop-blur-sm">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                View Code
+              </a>
+            </div>
+            <div class="absolute top-3 right-3">
+              <span class="text-[10px] font-medium tracking-wide text-purple-300 bg-purple-500/10 border border-purple-500/20 px-2.5 py-1 rounded-md backdrop-blur-sm">Machine Learning</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <h3 class="text-base font-medium text-white mb-1.5">Spam Detection</h3>
+            <p class="text-xs font-light text-slate-500 leading-relaxed">NLP-based classification model detecting spam messages using text preprocessing, TF-IDF vectorization, and ensemble algorithms.</p>
+          </div>
+        </div>
+
+        <!-- 11: House Price Prediction (ML) -->
+        <div class="reveal-child project-card group glass glass-hover rounded-2xl overflow-hidden cursor-pointer" data-category="ml">
+          <div class="relative h-44 overflow-hidden">
+            <img src="https://picsum.photos/seed/house-price-ml/600/350.jpg" alt="House Price Prediction" class="project-img w-full h-full object-cover transition-transform duration-700" />
             <div class="overlay absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent flex items-end p-5">
               <a href="https://github.com/gshwitha2000-wq/House-Price-Prediction-using-Machine-Learning" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-medium text-white bg-indigo-600/90 hover:bg-indigo-500 px-3.5 py-2 rounded-lg transition-colors backdrop-blur-sm">
                 <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -570,19 +775,19 @@
               </a>
             </div>
             <div class="absolute top-3 right-3">
-              <span class="text-[10px] font-medium tracking-wide text-purple-300 bg-purple-500/10 border border-purple-500/20 px-2.5 py-1 rounded-md backdrop-blur-sm">ML Model</span>
+              <span class="text-[10px] font-medium tracking-wide text-purple-300 bg-purple-500/10 border border-purple-500/20 px-2.5 py-1 rounded-md backdrop-blur-sm">Machine Learning</span>
             </div>
           </div>
           <div class="p-5">
             <h3 class="text-base font-medium text-white mb-1.5">House Price Prediction</h3>
-            <p class="text-xs font-light text-slate-500 leading-relaxed">Machine learning model predicting house prices using regression algorithms with feature engineering and model evaluation.</p>
+            <p class="text-xs font-light text-slate-500 leading-relaxed">Regression-based machine learning project for house-price prediction using Python, Pandas and Scikit-learn with feature engineering.</p>
           </div>
         </div>
 
-        <!-- Project 3 -->
-        <div class="reveal-child project-card group glass glass-hover rounded-2xl overflow-hidden cursor-pointer">
+        <!-- 12: Blinkit Power BI Dashboard -->
+        <div class="reveal-child project-card group glass glass-hover rounded-2xl overflow-hidden cursor-pointer" data-category="powerbi">
           <div class="relative h-44 overflow-hidden">
-            <img src="https://picsum.photos/seed/blinkit-data/600/350.jpg" alt="Blinkit Dashboard" class="project-img w-full h-full object-cover transition-transform duration-700" />
+            <img src="https://picsum.photos/seed/blinkit-powerbi-dash/600/350.jpg" alt="Blinkit Power BI Dashboard" class="project-img w-full h-full object-cover transition-transform duration-700" />
             <div class="overlay absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent flex items-end p-5">
               <a href="https://github.com/gshwitha2000-wq/Blinkit-Data-Analysis-using-PowerBI" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-medium text-white bg-indigo-600/90 hover:bg-indigo-500 px-3.5 py-2 rounded-lg transition-colors backdrop-blur-sm">
                 <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -594,15 +799,15 @@
             </div>
           </div>
           <div class="p-5">
-            <h3 class="text-base font-medium text-white mb-1.5">Blinkit Data Dashboard</h3>
-            <p class="text-xs font-light text-slate-500 leading-relaxed">Comprehensive Power BI dashboard analyzing Blinkit's quick commerce data for sales and delivery insights.</p>
+            <h3 class="text-base font-medium text-white mb-1.5">Blinkit Sales Analysis Dashboard</h3>
+            <p class="text-xs font-light text-slate-500 leading-relaxed">Analyzed sales performance and business trends using interactive Power BI visuals and KPIs.</p>
           </div>
         </div>
 
-        <!-- Project 4 -->
-        <div class="reveal-child project-card group glass glass-hover rounded-2xl overflow-hidden cursor-pointer">
+        <!-- 13: Superstore Performance (Power BI) -->
+        <div class="reveal-child project-card group glass glass-hover rounded-2xl overflow-hidden cursor-pointer" data-category="powerbi">
           <div class="relative h-44 overflow-hidden">
-            <img src="https://picsum.photos/seed/superstore-perf/600/350.jpg" alt="Superstore Dashboard" class="project-img w-full h-full object-cover transition-transform duration-700" />
+            <img src="https://picsum.photos/seed/superstore-perf-bi/600/350.jpg" alt="Superstore Performance Dashboard" class="project-img w-full h-full object-cover transition-transform duration-700" />
             <div class="overlay absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent flex items-end p-5">
               <a href="https://github.com/gshwitha2000-wq/Superstore-Performance-Analysis-using-PowerBI" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-medium text-white bg-indigo-600/90 hover:bg-indigo-500 px-3.5 py-2 rounded-lg transition-colors backdrop-blur-sm">
                 <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -614,15 +819,15 @@
             </div>
           </div>
           <div class="p-5">
-            <h3 class="text-base font-medium text-white mb-1.5">Superstore Performance</h3>
-            <p class="text-xs font-light text-slate-500 leading-relaxed">Dashboard visualizing Superstore performance data including sales trends, profit margins, and regional analysis.</p>
+            <h3 class="text-base font-medium text-white mb-1.5">Superstore Performance Analysis</h3>
+            <p class="text-xs font-light text-slate-500 leading-relaxed">Analyzed sales and performance metrics using interactive dashboards and business KPIs.</p>
           </div>
         </div>
 
-        <!-- Project 5 -->
-        <div class="reveal-child project-card group glass glass-hover rounded-2xl overflow-hidden cursor-pointer">
+        <!-- 14: HR Insights Trends (Power BI) -->
+        <div class="reveal-child project-card group glass glass-hover rounded-2xl overflow-hidden cursor-pointer" data-category="powerbi">
           <div class="relative h-44 overflow-hidden">
-            <img src="https://picsum.photos/seed/hr-insights-dash/600/350.jpg" alt="HR Insights" class="project-img w-full h-full object-cover transition-transform duration-700" />
+            <img src="https://picsum.photos/seed/hr-insights-powerbi/600/350.jpg" alt="HR Insights Dashboard" class="project-img w-full h-full object-cover transition-transform duration-700" />
             <div class="overlay absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent flex items-end p-5">
               <a href="https://github.com/gshwitha2000-wq/HR-Insights-Trends-using-PowerBI" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-medium text-white bg-indigo-600/90 hover:bg-indigo-500 px-3.5 py-2 rounded-lg transition-colors backdrop-blur-sm">
                 <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -634,35 +839,15 @@
             </div>
           </div>
           <div class="p-5">
-            <h3 class="text-base font-medium text-white mb-1.5">HR Insights Dashboard</h3>
-            <p class="text-xs font-light text-slate-500 leading-relaxed">Power BI dashboard for HR analytics covering employee attrition, satisfaction, and department performance.</p>
+            <h3 class="text-base font-medium text-white mb-1.5">HR Insights & Trends Dashboard</h3>
+            <p class="text-xs font-light text-slate-500 leading-relaxed">Built an HR analytics dashboard to identify trends and summarize workforce-related metrics.</p>
           </div>
         </div>
 
-        <!-- Project 6 -->
-        <div class="reveal-child project-card group glass glass-hover rounded-2xl overflow-hidden cursor-pointer">
+        <!-- 15: Pizza Sales Dashboard (Power BI) -->
+        <div class="reveal-child project-card group glass glass-hover rounded-2xl overflow-hidden cursor-pointer" data-category="powerbi">
           <div class="relative h-44 overflow-hidden">
-            <img src="https://picsum.photos/seed/ev-data-viz/600/350.jpg" alt="EV Dashboard" class="project-img w-full h-full object-cover transition-transform duration-700" />
-            <div class="overlay absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent flex items-end p-5">
-              <a href="https://github.com/gshwitha2000-wq/Electric-Vehicle-Analysis-using-PowerBI" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-medium text-white bg-indigo-600/90 hover:bg-indigo-500 px-3.5 py-2 rounded-lg transition-colors backdrop-blur-sm">
-                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                View Code
-              </a>
-            </div>
-            <div class="absolute top-3 right-3">
-              <span class="text-[10px] font-medium tracking-wide text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 px-2.5 py-1 rounded-md backdrop-blur-sm">Power BI</span>
-            </div>
-          </div>
-          <div class="p-5">
-            <h3 class="text-base font-medium text-white mb-1.5">Electric Vehicles Dashboard</h3>
-            <p class="text-xs font-light text-slate-500 leading-relaxed">Data visualization of EV market trends, adoption rates, and infrastructure growth across regions.</p>
-          </div>
-        </div>
-
-        <!-- Project 7 -->
-        <div class="reveal-child project-card group glass glass-hover rounded-2xl overflow-hidden cursor-pointer">
-          <div class="relative h-44 overflow-hidden">
-            <img src="https://picsum.photos/seed/pizza-sales-bi/600/350.jpg" alt="Pizza Sales" class="project-img w-full h-full object-cover transition-transform duration-700" />
+            <img src="https://picsum.photos/seed/pizza-sales-powerbi/600/350.jpg" alt="Pizza Sales Dashboard" class="project-img w-full h-full object-cover transition-transform duration-700" />
             <div class="overlay absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent flex items-end p-5">
               <a href="https://github.com/gshwitha2000-wq/Pizza-sales-using-PowerBI-Dashboard" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-medium text-white bg-indigo-600/90 hover:bg-indigo-500 px-3.5 py-2 rounded-lg transition-colors backdrop-blur-sm">
                 <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -674,17 +859,17 @@
             </div>
           </div>
           <div class="p-5">
-            <h3 class="text-base font-medium text-white mb-1.5">Pizza Sales Dashboard</h3>
-            <p class="text-xs font-light text-slate-500 leading-relaxed">Analyzing pizza sales data with breakdowns by size, category, and peak ordering hours.</p>
+            <h3 class="text-base font-medium text-white mb-1.5">Pizza Sales Analytics Dashboard</h3>
+            <p class="text-xs font-light text-slate-500 leading-relaxed">Performed sales analysis and visualized product and performance trends through interactive Power BI visuals.</p>
           </div>
         </div>
 
-        <!-- Project 8 -->
-        <div class="reveal-child project-card group glass glass-hover rounded-2xl overflow-hidden cursor-pointer">
+        <!-- 16: Zomato Power BI Dashboard -->
+        <div class="reveal-child project-card group glass glass-hover rounded-2xl overflow-hidden cursor-pointer" data-category="powerbi">
           <div class="relative h-44 overflow-hidden">
-            <img src="https://picsum.photos/seed/recruit-analytics/600/350.jpg" alt="Recruitment" class="project-img w-full h-full object-cover transition-transform duration-700" />
+            <img src="https://picsum.photos/seed/zomato-powerbi-dash/600/350.jpg" alt="Zomato Power BI Dashboard" class="project-img w-full h-full object-cover transition-transform duration-700" />
             <div class="overlay absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent flex items-end p-5">
-              <a href="https://github.com/gshwitha2000-wq/Recruitment-Dashboard-using-PowerBI" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-medium text-white bg-indigo-600/90 hover:bg-indigo-500 px-3.5 py-2 rounded-lg transition-colors backdrop-blur-sm">
+              <a href="https://github.com/gshwitha2000-wq/Zomato-Data-Analysis-using-Power-BI" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-medium text-white bg-indigo-600/90 hover:bg-indigo-500 px-3.5 py-2 rounded-lg transition-colors backdrop-blur-sm">
                 <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
                 View Code
               </a>
@@ -694,33 +879,19 @@
             </div>
           </div>
           <div class="p-5">
-            <h3 class="text-base font-medium text-white mb-1.5">Recruitment Analytics</h3>
-            <p class="text-xs font-light text-slate-500 leading-relaxed">Dashboard tracking recruitment funnel metrics, hiring sources, and time-to-fill KPIs.</p>
+            <h3 class="text-base font-medium text-white mb-1.5">Zomato Data Analysis Dashboard</h3>
+            <p class="text-xs font-light text-slate-500 leading-relaxed">Analyzed restaurant and business metrics and presented interactive KPIs and trends through Power BI.</p>
           </div>
         </div>
 
-        <!-- Project 9: Portfolio -->
-        <div class="reveal-child project-card group glass glass-hover rounded-2xl overflow-hidden cursor-pointer">
-          <div class="relative h-44 overflow-hidden">
-            <img src="https://picsum.photos/seed/portfolio-react-site/600/350.jpg" alt="Portfolio Website" class="project-img w-full h-full object-cover transition-transform duration-700" />
-            <div class="overlay absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent flex items-end p-5">
-              <a href="https://portfolio-git-main-ashwitha.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-medium text-white bg-indigo-600/90 hover:bg-indigo-500 px-3.5 py-2 rounded-lg transition-colors backdrop-blur-sm">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
-                Live Demo
-              </a>
-            </div>
-            <div class="absolute top-3 right-3">
-              <span class="text-[10px] font-medium tracking-wide text-emerald-300 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-md backdrop-blur-sm">React</span>
-            </div>
-          </div>
-          <div class="p-5">
-            <h3 class="text-base font-medium text-white mb-1.5">Portfolio Website</h3>
-            <p class="text-xs font-light text-slate-500 leading-relaxed">This very site — built with React, Vite, and deployed on Vercel. Features smooth animations and responsive design.</p>
-          </div>
-        </div>
+      </div>
+
+      <div class="reveal text-center mt-12">
+        <p class="text-xs font-light text-slate-600">Showing <span id="projectCount" class="text-slate-400">16</span> projects across Python, Machine Learning & Power BI</p>
       </div>
     </div>
   </section>
+
   <!-- ==================== SKILLS ==================== -->
   <section id="skills" class="relative py-24 md:py-32">
     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-purple-950/8 to-transparent pointer-events-none"></div>
@@ -731,13 +902,103 @@
       </div>
 
       <div class="reveal-stagger grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        <!-- Skill cards -->
         <div class="reveal-child glass glass-hover cert-glow rounded-2xl p-6 group">
           <div class="flex items-center gap-4 mb-4">
-            <div class="w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 text-lg">⚛</div>
+            <div class="w-11 h-11 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-lg">🐍</div>
             <div>
-              <h3 class="text-sm font-medium text-white">React.js</h3>
-              <p class="text-[11px] text-slate-500">Frontend Framework</p>
+              <h3 class="text-sm font-medium text-white">Python</h3>
+              <p class="text-[11px] text-slate-500">Pandas, NumPy, Matplotlib, Scikit-learn</p>
+            </div>
+          </div>
+          <div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
+            <div class="skill-bar-fill h-full bg-gradient-to-r from-blue-500 to-blue-400 rounded-full" data-width="90%"></div>
+          </div>
+        </div>
+
+        <div class="reveal-child glass glass-hover cert-glow rounded-2xl p-6 group">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-11 h-11 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 text-lg">📊</div>
+            <div>
+              <h3 class="text-sm font-medium text-white">Power BI & DAX</h3>
+              <p class="text-[11px] text-slate-500">Dashboarding, KPI Reporting</p>
+            </div>
+          </div>
+          <div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
+            <div class="skill-bar-fill h-full bg-gradient-to-r from-indigo-500 to-indigo-400 rounded-full" data-width="90%"></div>
+          </div>
+        </div>
+
+        <div class="reveal-child glass glass-hover cert-glow rounded-2xl p-6 group">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-11 h-11 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 text-lg">📋</div>
+            <div>
+              <h3 class="text-sm font-medium text-white">SQL</h3>
+              <p class="text-[11px] text-slate-500">Data Querying, Aggregation</p>
+            </div>
+          </div>
+          <div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
+            <div class="skill-bar-fill h-full bg-gradient-to-r from-violet-500 to-violet-400 rounded-full" data-width="85%"></div>
+          </div>
+        </div>
+
+        <div class="reveal-child glass glass-hover cert-glow rounded-2xl p-6 group">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-11 h-11 rounded-xl bg-green-500/10 border border-green-500/20 flex items-center justify-center text-green-400 text-lg">📈</div>
+            <div>
+              <h3 class="text-sm font-medium text-white">Advanced Excel</h3>
+              <p class="text-[11px] text-slate-500">Pivot Tables, Charts, Formulas</p>
+            </div>
+          </div>
+          <div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
+            <div class="skill-bar-fill h-full bg-gradient-to-r from-green-500 to-green-400 rounded-full" data-width="88%"></div>
+          </div>
+        </div>
+
+        <div class="reveal-child glass glass-hover cert-glow rounded-2xl p-6 group">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 text-lg">🔍</div>
+            <div>
+              <h3 class="text-sm font-medium text-white">Data Analysis & EDA</h3>
+              <p class="text-[11px] text-slate-500">Cleaning, Validation, Visualization</p>
+            </div>
+          </div>
+          <div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
+            <div class="skill-bar-fill h-full bg-gradient-to-r from-teal-500 to-teal-400 rounded-full" data-width="90%"></div>
+          </div>
+        </div>
+
+        <div class="reveal-child glass glass-hover cert-glow rounded-2xl p-6 group">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-11 h-11 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400 text-lg">🤖</div>
+            <div>
+              <h3 class="text-sm font-medium text-white">Machine Learning</h3>
+              <p class="text-[11px] text-slate-500">Scikit-learn, Regression, Classification</p>
+            </div>
+          </div>
+          <div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
+            <div class="skill-bar-fill h-full bg-gradient-to-r from-pink-500 to-pink-400 rounded-full" data-width="78%"></div>
+          </div>
+        </div>
+
+        <div class="reveal-child glass glass-hover cert-glow rounded-2xl p-6 group">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-11 h-11 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400 text-lg">☁</div>
+            <div>
+              <h3 class="text-sm font-medium text-white">Azure Cloud</h3>
+              <p class="text-[11px] text-slate-500">Azure Portal, Environment Admin</p>
+            </div>
+          </div>
+          <div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
+            <div class="skill-bar-fill h-full bg-gradient-to-r from-orange-500 to-orange-400 rounded-full" data-width="82%"></div>
+          </div>
+        </div>
+
+        <div class="reveal-child glass glass-hover cert-glow rounded-2xl p-6 group">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 text-lg">🔄</div>
+            <div>
+              <h3 class="text-sm font-medium text-white">CI/CD & DevOps</h3>
+              <p class="text-[11px] text-slate-500">Jenkins, Hudson, TeamCity, Git</p>
             </div>
           </div>
           <div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
@@ -747,110 +1008,74 @@
 
         <div class="reveal-child glass glass-hover cert-glow rounded-2xl p-6 group">
           <div class="flex items-center gap-4 mb-4">
-            <div class="w-11 h-11 rounded-xl bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center text-yellow-400 text-lg">JS</div>
+            <div class="w-11 h-11 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-lg">🏢</div>
             <div>
-              <h3 class="text-sm font-medium text-white">JavaScript (ES6+)</h3>
-              <p class="text-[11px] text-slate-500">Programming Language</p>
+              <h3 class="text-sm font-medium text-white">Enterprise Platforms</h3>
+              <p class="text-[11px] text-slate-500">Dynamics 365, Oracle EBS, AEM, MuleSoft</p>
             </div>
           </div>
           <div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
-            <div class="skill-bar-fill h-full bg-gradient-to-r from-yellow-500 to-yellow-400 rounded-full" data-width="82%"></div>
+            <div class="skill-bar-fill h-full bg-gradient-to-r from-amber-500 to-amber-400 rounded-full" data-width="85%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== EDUCATION ==================== -->
+  <section id="education" class="relative py-24 md:py-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="reveal text-center mb-16">
+        <p class="text-[11px] font-medium tracking-widest uppercase text-indigo-400 mb-4">Academic Background</p>
+        <h2 class="text-3xl md:text-4xl font-light tracking-tight">Education & <span class="gradient-text font-normal">Qualifications</span></h2>
+      </div>
+
+      <div class="max-w-3xl mx-auto">
+        <!-- Education Item 1 -->
+        <div class="reveal relative pl-12 pb-12">
+          <div class="timeline-line"></div>
+          <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center">
+            <div class="w-3 h-3 rounded-full bg-indigo-500"></div>
+          </div>
+          <div class="gradient-border rounded-2xl">
+            <div class="glass rounded-2xl p-6 md:p-8">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
+                <div>
+                  <h3 class="text-lg font-medium text-white">Master of Science (Statistics)</h3>
+                  <p class="text-sm text-indigo-400 font-light">Post Graduation</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-sm font-medium text-white">Sai Sudhir PG College</p>
+                  <p class="text-xs text-slate-500 font-light">2023</p>
+                </div>
+              </div>
+              <div class="shimmer-line h-px bg-white/5 mb-4"></div>
+              <p class="text-sm font-light text-slate-400 leading-relaxed">Specialized in Statistics with strong foundation in probability, statistical inference, regression analysis, and data modeling — directly applicable to data analytics and machine learning workflows.</p>
+            </div>
           </div>
         </div>
 
-        <div class="reveal-child glass glass-hover cert-glow rounded-2xl p-6 group">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-11 h-11 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400 text-lg">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.071-.757.529-5.903H7.212l.186 2.118h6.583l-.247 2.718H7.113l.252 2.906h6.224l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L10.805 19.5l5.263-1.46.585-6.29H8.531z"/></svg>
+        <!-- Education Item 2 -->
+        <div class="reveal relative pl-12 pb-12">
+          <div class="timeline-line"></div>
+          <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-purple-500/10 border border-purple-500/30 flex items-center justify-center">
+            <div class="w-3 h-3 rounded-full bg-purple-500"></div>
+          </div>
+          <div class="gradient-border rounded-2xl">
+            <div class="glass rounded-2xl p-6 md:p-8">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
+                <div>
+                  <h3 class="text-lg font-medium text-white">Bachelor of Science (MSCs)</h3>
+                  <p class="text-sm text-purple-400 font-light">Graduation — Maths, Statistics, Computer Science</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-sm font-medium text-white">Bankatlal Badruka College for IT</p>
+                  <p class="text-xs text-slate-500 font-light">2021</p>
+                </div>
+              </div>
+              <div class="shimmer-line h-px bg-white/5 mb-4"></div>
+              <p class="text-sm font-light text-slate-400 leading-relaxed">Interdisciplinary degree combining Mathematics, Statistics and Computer Science — building analytical thinking, programming fundamentals, and quantitative reasoning skills.</p>
             </div>
-            <div>
-              <h3 class="text-sm font-medium text-white">HTML & CSS</h3>
-              <p class="text-[11px] text-slate-500">Web Technologies</p>
-            </div>
-          </div>
-          <div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
-            <div class="skill-bar-fill h-full bg-gradient-to-r from-orange-500 to-orange-400 rounded-full" data-width="90%"></div>
-          </div>
-        </div>
-
-        <div class="reveal-child glass glass-hover cert-glow rounded-2xl p-6 group">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-11 h-11 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-lg">🐍</div>
-            <div>
-              <h3 class="text-sm font-medium text-white">Python</h3>
-              <p class="text-[11px] text-slate-500">Programming & Automation</p>
-            </div>
-          </div>
-          <div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
-            <div class="skill-bar-fill h-full bg-gradient-to-r from-blue-500 to-blue-400 rounded-full" data-width="80%"></div>
-          </div>
-        </div>
-
-        <div class="reveal-child glass glass-hover cert-glow rounded-2xl p-6 group">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-11 h-11 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-lg">🤖</div>
-            <div>
-              <h3 class="text-sm font-medium text-white">Machine Learning</h3>
-              <p class="text-[11px] text-slate-500">AI & Predictive Models</p>
-            </div>
-          </div>
-          <div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
-            <div class="skill-bar-fill h-full bg-gradient-to-r from-purple-500 to-purple-400 rounded-full" data-width="72%"></div>
-          </div>
-        </div>
-
-        <div class="reveal-child glass glass-hover cert-glow rounded-2xl p-6 group">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-11 h-11 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 text-lg">📊</div>
-            <div>
-              <h3 class="text-sm font-medium text-white">Data Analysis</h3>
-              <p class="text-[11px] text-slate-500">Power BI, Excel</p>
-            </div>
-          </div>
-          <div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
-            <div class="skill-bar-fill h-full bg-gradient-to-r from-indigo-500 to-indigo-400 rounded-full" data-width="88%"></div>
-          </div>
-        </div>
-
-        <div class="reveal-child glass glass-hover cert-glow rounded-2xl p-6 group">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-11 h-11 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400 text-lg">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.66 2.66c.645-.222 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.544-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187"/></svg>
-            </div>
-            <div>
-              <h3 class="text-sm font-medium text-white">Git & GitHub</h3>
-              <p class="text-[11px] text-slate-500">Version Control</p>
-            </div>
-          </div>
-          <div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
-            <div class="skill-bar-fill h-full bg-gradient-to-r from-rose-500 to-rose-400 rounded-full" data-width="85%"></div>
-          </div>
-        </div>
-
-        <!-- Additional skill cards for CI/CD & Azure -->
-        <div class="reveal-child glass glass-hover cert-glow rounded-2xl p-6 group">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-11 h-11 rounded-xl bg-green-500/10 border border-green-500/20 flex items-center justify-center text-green-400 text-lg">🔄</div>
-            <div>
-              <h3 class="text-sm font-medium text-white">CI/CD Pipelines</h3>
-              <p class="text-[11px] text-slate-500">Jenkins, DevOps</p>
-            </div>
-          </div>
-          <div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
-            <div class="skill-bar-fill h-full bg-gradient-to-r from-green-500 to-green-400 rounded-full" data-width="92%"></div>
-          </div>
-        </div>
-
-        <div class="reveal-child glass glass-hover cert-glow rounded-2xl p-6 group">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-11 h-11 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 text-lg">☁</div>
-            <div>
-              <h3 class="text-sm font-medium text-white">Azure Cloud</h3>
-              <p class="text-[11px] text-slate-500">Cloud Infrastructure</p>
-            </div>
-          </div>
-          <div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
-            <div class="skill-bar-fill h-full bg-gradient-to-r from-sky-500 to-sky-400 rounded-full" data-width="87%"></div>
           </div>
         </div>
       </div>
@@ -859,83 +1084,35 @@
 
   <!-- ==================== CERTIFICATIONS ==================== -->
   <section id="certifications" class="relative py-24 md:py-32">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-950/8 to-transparent pointer-events-none"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
       <div class="reveal text-center mb-16">
         <p class="text-[11px] font-medium tracking-widest uppercase text-indigo-400 mb-4">Credentials</p>
         <h2 class="text-3xl md:text-4xl font-light tracking-tight">Certifications & <span class="gradient-text font-normal">Achievements</span></h2>
       </div>
 
-      <div class="reveal-stagger grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-4xl mx-auto">
-        <!-- Cert 1 -->
-        <div class="reveal-child gradient-border rounded-2xl">
-          <div class="glass glass-hover cert-glow rounded-2xl p-6 text-center group">
-            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500/10 to-indigo-500/10 border border-blue-500/20 flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-500">
-              <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg>
+      <div class="reveal-stagger grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-3xl mx-auto">
+        <div class="reveal-child glass glass-hover cert-glow rounded-2xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 flex-shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"/></svg>
             </div>
-            <h3 class="text-sm font-medium text-white mb-1.5">Microsoft Certified: Azure Fundamentals</h3>
-            <p class="text-xs text-indigo-400 font-medium mb-2">AZ-900</p>
-            <p class="text-[11px] text-slate-500 font-light">Cloud concepts, Azure services, security, and governance fundamentals.</p>
-          </div>
-        </div>
-
-        <!-- Cert 2 -->
-        <div class="reveal-child gradient-border rounded-2xl">
-          <div class="glass glass-hover cert-glow rounded-2xl p-6 text-center group">
-            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20 flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-500">
-              <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6"/></svg>
+            <div>
+              <h3 class="text-sm font-medium text-white mb-1">Microsoft Certified: Azure Fundamentals (AZ-900)</h3>
+              <p class="text-xs font-light text-slate-500">Microsoft</p>
             </div>
-            <h3 class="text-sm font-medium text-white mb-1.5">Data Science Certification</h3>
-            <p class="text-xs text-purple-400 font-medium mb-2">Professional</p>
-            <p class="text-[11px] text-slate-500 font-light">Comprehensive data science skills including statistics, ML algorithms, and data visualization.</p>
           </div>
         </div>
 
-        <!-- Cert 3 -->
-        <div class="reveal-child gradient-border rounded-2xl">
-          <div class="glass glass-hover cert-glow rounded-2xl p-6 text-center group">
-            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 border border-emerald-500/20 flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-500">
-              <svg class="w-8 h-8 text-emerald-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342"/></svg>
+        <div class="reveal-child glass glass-hover cert-glow rounded-2xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 flex-shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"/></svg>
             </div>
-            <h3 class="text-sm font-medium text-white mb-1.5">Professional Statistics</h3>
-            <p class="text-xs text-emerald-400 font-medium mb-2">Specialization</p>
-            <p class="text-[11px] text-slate-500 font-light">Advanced statistical methods, hypothesis testing, and probability for data-driven decisions.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== STATS ==================== -->
-  <section id="stats" class="relative py-24 md:py-32">
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-950/10 to-transparent pointer-events-none"></div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="reveal text-center mb-16">
-        <p class="text-[11px] font-medium tracking-widest uppercase text-indigo-400 mb-4">By the Numbers</p>
-        <h2 class="text-3xl md:text-4xl font-light tracking-tight">Professional <span class="gradient-text font-normal">Statistics</span></h2>
-      </div>
-
-      <div class="reveal-stagger grid grid-cols-2 lg:grid-cols-3 gap-5 max-w-4xl mx-auto">
-        <!-- Stat 1 -->
-        <div class="reveal-child gradient-border rounded-2xl">
-          <div class="glass rounded-2xl p-8 text-center">
-            <p class="counter text-4xl md:text-5xl font-extralight text-white mb-2" data-target="4.5" data-suffix="+">0</p>
-            <p class="text-xs font-light text-slate-500 tracking-wide uppercase">Years Experience</p>
-          </div>
-        </div>
-
-        <!-- Stat 2 -->
-        <div class="reveal-child gradient-border rounded-2xl">
-          <div class="glass rounded-2xl p-8 text-center">
-            <p class="counter text-4xl md:text-5xl font-extralight text-white mb-2" data-target="100" data-suffix="+">0</p>
-            <p class="text-xs font-light text-slate-500 tracking-wide uppercase">Deployments</p>
-          </div>
-        </div>
-
-        <!-- Stat 3 -->
-        <div class="reveal-child gradient-border rounded-2xl col-span-2 lg:col-span-1">
-          <div class="glass rounded-2xl p-8 text-center">
-            <p class="text-4xl md:text-5xl font-extralight gradient-text mb-2">Multiple</p>
-            <p class="text-xs font-light text-slate-500 tracking-wide uppercase">Enterprise Applications</p>
+            <div>
+              <h3 class="text-sm font-medium text-white mb-1">Certified in Data Analytics & Data Science</h3>
+              <p class="text-xs font-light text-slate-500">Professional Certification</p>
+            </div>
           </div>
         </div>
       </div>
@@ -944,189 +1121,214 @@
 
   <!-- ==================== CONTACT ==================== -->
   <section id="contact" class="relative py-24 md:py-32">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-950/10 to-transparent pointer-events-none"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
       <div class="reveal text-center mb-16">
-        <p class="text-[11px] font-medium tracking-widest uppercase text-indigo-400 mb-4">Get in Touch</p>
+        <p class="text-[11px] font-medium tracking-widest uppercase text-indigo-400 mb-4">Get In Touch</p>
         <h2 class="text-3xl md:text-4xl font-light tracking-tight">Let's <span class="gradient-text font-normal">Connect</span></h2>
-        <p class="text-sm font-light text-slate-500 mt-4 max-w-lg mx-auto">If you'd like to collaborate, discuss opportunities, or just say hello — feel free to reach out.</p>
+        <p class="text-sm font-light text-slate-500 mt-4 max-w-lg mx-auto">Looking for a Data Analyst, BI Analyst, or Reporting Analyst? I'd love to discuss how I can contribute.</p>
       </div>
 
-      <div class="reveal-stagger grid sm:grid-cols-3 gap-5 max-w-3xl mx-auto">
-        <!-- Email -->
-        <a href="mailto:gshwitha2000@gmail.com" class="reveal-child glass glass-hover cert-glow rounded-2xl p-6 text-center group block">
-          <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-500">
-            <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+      <div class="max-w-2xl mx-auto">
+        <div class="gradient-border rounded-2xl">
+          <div class="glass rounded-2xl p-8 md:p-10">
+            <form id="contactForm" class="space-y-5" onsubmit="handleSubmit(event)">
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label class="block text-[11px] font-medium tracking-wide text-slate-400 mb-2 uppercase">Name</label>
+                  <input type="text" required placeholder="Your name" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm font-light text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500/50 focus:bg-white/[0.07] transition-all duration-300" />
+                </div>
+                <div>
+                  <label class="block text-[11px] font-medium tracking-wide text-slate-400 mb-2 uppercase">Email</label>
+                  <input type="email" required placeholder="your@email.com" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm font-light text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500/50 focus:bg-white/[0.07] transition-all duration-300" />
+                </div>
+              </div>
+              <div>
+                <label class="block text-[11px] font-medium tracking-wide text-slate-400 mb-2 uppercase">Subject</label>
+                <input type="text" required placeholder="What's this about?" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm font-light text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500/50 focus:bg-white/[0.07] transition-all duration-300" />
+              </div>
+              <div>
+                <label class="block text-[11px] font-medium tracking-wide text-slate-400 mb-2 uppercase">Message</label>
+                <textarea rows="5" required placeholder="Tell me about your project or opportunity..." class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm font-light text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500/50 focus:bg-white/[0.07] transition-all duration-300 resize-none"></textarea>
+              </div>
+              <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium px-8 py-3.5 rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/25 hover:-translate-y-0.5">
+                Send Message
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"/></svg>
+              </button>
+            </form>
           </div>
-          <h3 class="text-sm font-medium text-white mb-1">Email</h3>
-          <p class="text-[11px] text-slate-500 font-light break-all">gshwitha2000@gmail.com</p>
-        </a>
+        </div>
 
-        <!-- LinkedIn -->
-        <a href="https://linkedin.com/in/ashwitha-gogikar" target="_blank" class="reveal-child glass glass-hover cert-glow rounded-2xl p-6 text-center group block">
-          <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-500">
-            <svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        <!-- Contact Info Cards -->
+        <div class="reveal grid sm:grid-cols-3 gap-4 mt-8">
+          <a href="mailto:gshwitha2000@gmail.com" class="glass glass-hover rounded-xl p-4 text-center group">
+            <svg class="w-5 h-5 text-indigo-400 mx-auto mb-2" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
+            <p class="text-[11px] font-light text-slate-500 group-hover:text-slate-300 transition-colors">gshwitha2000@gmail.com</p>
+          </a>
+          <a href="tel:+918978316513" class="glass glass-hover rounded-xl p-4 text-center group">
+            <svg class="w-5 h-5 text-indigo-400 mx-auto mb-2" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/></svg>
+            <p class="text-[11px] font-light text-slate-500 group-hover:text-slate-300 transition-colors">+91 8978316513</p>
+          </a>
+          <div class="glass glass-hover rounded-xl p-4 text-center">
+            <svg class="w-5 h-5 text-indigo-400 mx-auto mb-2" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/></svg>
+            <p class="text-[11px] font-light text-slate-500">Hyderabad, Telangana, India</p>
           </div>
-          <h3 class="text-sm font-medium text-white mb-1">LinkedIn</h3>
-          <p class="text-[11px] text-slate-500 font-light">ashwitha-gogikar</p>
-        </a>
+        </div>
 
-        <!-- GitHub -->
-        <a href="https://github.com/gshwitha2000-wq" target="_blank" class="reveal-child glass glass-hover cert-glow rounded-2xl p-6 text-center group block">
-          <div class="w-12 h-12 rounded-xl bg-slate-500/10 border border-slate-500/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-500">
-            <svg class="w-5 h-5 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          </div>
-          <h3 class="text-sm font-medium text-white mb-1">GitHub</h3>
-          <p class="text-[11px] text-slate-500 font-light">gshwitha2000-wq</p>
-        </a>
+        <!-- Social links -->
+        <div class="reveal flex items-center justify-center gap-4 mt-8">
+          <a href="https://github.com/gshwitha2000-wq" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-xl glass glass-hover flex items-center justify-center text-slate-400 hover:text-white transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/ashwitha-gogikar-35839a1b5/" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-xl glass glass-hover flex items-center justify-center text-slate-400 hover:text-white transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="mailto:gshwitha2000@gmail.com" class="w-11 h-11 rounded-xl glass glass-hover flex items-center justify-center text-slate-400 hover:text-white transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ==================== FOOTER ==================== -->
-  <footer class="relative border-t border-white/5 py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-        <!-- Logo -->
-        <div class="flex items-center gap-2">
-          <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white font-semibold text-xs">A</div>
-          <span class="text-sm font-light text-slate-500">© 2026 Ashwitha Gogikar. All rights reserved.</span>
-        </div>
-        <!-- Built with -->
-        <p class="text-xs font-light text-slate-600">
-          Built with <span class="text-red-400">❤</span> using React & Vite
-        </p>
-        <!-- Back to top -->
-        <a href="#home" class="group inline-flex items-center gap-2 text-xs font-light text-slate-500 hover:text-indigo-400 transition-colors">
-          Back to top
-          <svg class="w-3.5 h-3.5 transition-transform group-hover:-translate-y-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/></svg>
-        </a>
-      </div>
+  <footer class="border-t border-white/5 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-xs font-light text-slate-600">© 2025 Ashwitha Gogikar. All rights reserved.</p>
+      <p class="text-xs font-light text-slate-600">Data Analyst | BI Analyst | Reporting Analyst | Data Analytics Specialist</p>
     </div>
   </footer>
 
-  <!-- ==================== TOAST ==================== -->
-  <div id="toast" class="toast glass rounded-xl border border-indigo-500/20">
-    <div class="flex items-center gap-3">
-      <div class="w-8 h-8 rounded-lg bg-indigo-500/10 flex items-center justify-center flex-shrink-0">
-        <svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-      </div>
-      <p id="toastMessage" class="text-sm font-light text-slate-300"></p>
-    </div>
+  <!-- Toast -->
+  <div id="toast" class="toast glass border border-white/10">
+    <p id="toastMsg" class="text-sm font-light text-white"></p>
   </div>
 
-  <!-- ==================== SCRIPTS ==================== -->
   <script>
-    // --- Scroll Reveal ---
+    // ===== SCROLL REVEAL =====
     const revealElements = document.querySelectorAll('.reveal, .reveal-stagger');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
-          // Animate skill bars inside
-          entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
-            bar.style.width = bar.dataset.width;
-            bar.classList.add('active');
-          });
-          // Animate counters inside
-          entry.target.querySelectorAll('.counter[data-target]').forEach(counter => {
-            animateCounter(counter);
-          });
         }
       });
-    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
-
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
     revealElements.forEach(el => observer.observe(el));
 
-    // --- Counter Animation ---
-    function animateCounter(el) {
-      if (el.dataset.animated) return;
-      el.dataset.animated = 'true';
-      const target = parseFloat(el.dataset.target);
-      const suffix = el.dataset.suffix || '';
-      const isFloat = target % 1 !== 0;
-      const duration = 2000;
-      const startTime = performance.now();
+    // ===== SKILL BARS =====
+    const skillBars = document.querySelectorAll('.skill-bar-fill');
+    const skillObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.width = entry.target.dataset.width;
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.5 });
+    skillBars.forEach(bar => skillObserver.observe(bar));
 
-      function update(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 4);
-        const current = eased * target;
-        el.textContent = (isFloat ? current.toFixed(1) : Math.floor(current)) + suffix;
-        if (progress < 1) requestAnimationFrame(update);
-      }
-      requestAnimationFrame(update);
-    }
-
-    // --- Navbar scroll effect ---
+    // ===== NAVBAR SCROLL =====
     const navbar = document.getElementById('navbar');
-    let lastScroll = 0;
     window.addEventListener('scroll', () => {
-      const currentScroll = window.pageYOffset;
-      if (currentScroll > 50) {
+      if (window.scrollY > 50) {
         navbar.style.background = 'rgba(2, 6, 23, 0.85)';
-        navbar.style.backdropFilter = 'blur(24px)';
+        navbar.style.backdropFilter = 'blur(12px)';
         navbar.style.borderBottom = '1px solid rgba(255,255,255,0.05)';
       } else {
         navbar.style.background = 'transparent';
         navbar.style.backdropFilter = 'none';
-        navbar.style.borderBottom = '1px solid transparent';
+        navbar.style.borderBottom = 'none';
       }
-      lastScroll = currentScroll;
     });
 
-    // --- Active nav link ---
+    // ===== ACTIVE NAV LINK =====
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
     window.addEventListener('scroll', () => {
       let current = '';
       sections.forEach(section => {
         const sectionTop = section.offsetTop - 100;
-        if (window.pageYOffset >= sectionTop) {
+        if (window.scrollY >= sectionTop) {
           current = section.getAttribute('id');
         }
       });
       navLinks.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) {
+        if (link.getAttribute('href') === `#${current}`) {
           link.classList.add('active');
         }
       });
     });
 
-    // --- Mobile menu ---
+    // ===== MOBILE MENU =====
     const mobileToggle = document.getElementById('mobileToggle');
     const mobileMenu = document.getElementById('mobileMenu');
     const menuIcon = document.getElementById('menuIcon');
     const closeIcon = document.getElementById('closeIcon');
-    let menuOpen = false;
 
     mobileToggle.addEventListener('click', () => {
-      menuOpen = !menuOpen;
-      mobileMenu.classList.toggle('open', menuOpen);
-      menuIcon.classList.toggle('hidden', menuOpen);
-      closeIcon.classList.toggle('hidden', !menuOpen);
+      mobileMenu.classList.toggle('open');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
     });
 
     function closeMobile() {
-      menuOpen = false;
       mobileMenu.classList.remove('open');
       menuIcon.classList.remove('hidden');
       closeIcon.classList.add('hidden');
     }
 
-    // --- Toast ---
-    let toastTimeout;
+    // ===== TOAST =====
     function showToast(message) {
       const toast = document.getElementById('toast');
-      const toastMsg = document.getElementById('toastMessage');
+      const toastMsg = document.getElementById('toastMsg');
       toastMsg.textContent = message;
       toast.classList.add('show');
-      clearTimeout(toastTimeout);
-      toastTimeout = setTimeout(() => {
-        toast.classList.remove('show');
-      }, 3000);
+      setTimeout(() => toast.classList.remove('show'), 3000);
     }
+
+    // ===== CONTACT FORM =====
+    function handleSubmit(e) {
+      e.preventDefault();
+      showToast('Message sent successfully! I\'ll get back to you soon.');
+      e.target.reset();
+    }
+
+    // ===== PROJECT FILTER =====
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const projectCards = document.querySelectorAll('#projectsGrid .project-card');
+    const projectCount = document.getElementById('projectCount');
+
+    filterTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        filterTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const filter = tab.dataset.filter;
+        let visibleCount = 0;
+
+        projectCards.forEach(card => {
+          const category = card.dataset.category;
+          if (filter === 'all' || category === filter) {
+            card.style.display = '';
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            requestAnimationFrame(() => {
+              card.style.transition = 'opacity 0.4s, transform 0.4s';
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            });
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        projectCount.textContent = visibleCount;
+      });
+    });
   </script>
+
 </body>
 </html>
